@@ -38,11 +38,10 @@ public partial class login_form : System.Web.UI.Page
         String username = TextBoxUsername.Text;
         String password = TextBoxPassword.Text;
 
-        //   users.containUser(new User(username, password));
-
         if (containUser(new User(username, password)))
         {
-            Response.Cookies["UserInformation"]["Username"] = username;
+            Session["username"] = username;
+            Session["loggedIn"] = true;
             Response.Redirect("login_success.aspx");
         }
         else
