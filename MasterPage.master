@@ -16,9 +16,6 @@
     <script src="css/bootstrap-3.3.2-dist/css/bootstrap.min.js"></script>
 
 
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -33,54 +30,43 @@
 
 
 </head>
-<body role="document">
-    <form id="form1" runat="server">
+<body>
 
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">SSP</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="Default.aspx">Home</a></li>
-                        <li><a href="nextPage.aspx">Page 1</a></li>
-                        <li><a href="CalculatorPage.aspx">Calc</a></li>
-                        <li><a href="Lottery.aspx">Lottery</a></li>
-                        <li><a href="exercise4.aspx">Validation</a></li>
-                        <li><a href="exercise5.aspx">Sessions</a></li>
-                        <li><a href="login_form.aspx">Login</a></li>
-                        <li><a href="exercise6.aspx">Exercise 6</a></li>
-                        <li><a href="exercise7.aspx">Exercise 7</a></li>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Menu <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                                <li class="divider"></li>
-                                <li class="dropdown-header">More things...</li>
-                                <li><a href="#">Link 4</a></li>
-                                <li><a href="#">Link 5</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse" >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">SSP</a>
             </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="Default.aspx">Home</a></li>
+                    <li><a href="nextPage.aspx">Page 1</a></li>
+                    <li><a href="CalculatorPage.aspx">Calc</a></li>
+                    <li><a href="Lottery.aspx">Lottery</a></li>
+                    <li><a href="exercise4.aspx">Validation</a></li>
+                    <li><a href="exercise5.aspx">Sessions</a></li>
+                    <li><a href="login_form.aspx">Login</a></li>
+                    <li><a href="exercise6.aspx">Exercise 6</a></li>
+                    <li><a href="exercise7.aspx">Exercise 7</a></li>
+                    <li><a href="exercise8.aspx">Exercise 8</a></li>
+
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
+    </nav>
 
 
 
-
+    <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </form>
