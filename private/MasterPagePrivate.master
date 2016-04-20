@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPagePrivate.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -7,13 +7,13 @@
     <title></title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="css/bootstrap-3.3.2-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap-3.3.2-dist/css/bootstrap.min.css" />
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="css/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="css/bootstrap-3.3.2-dist/css/bootstrap.min.js"></script>
+    <script src="../css/bootstrap-3.3.2-dist/css/bootstrap.min.js"></script>
 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -48,16 +48,16 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="Default.aspx">Home</a></li>
-                    <li><a href="nextPage.aspx">Page 1</a></li>
-                    <li><a href="CalculatorPage.aspx">Calc</a></li>
-                    <li><a href="Lottery.aspx">Lottery</a></li>
-                    <li><a href="exercise4.aspx">Validation</a></li>
-                    <li><a href="exercise5.aspx">Sessions</a></li>
-                    <li><a href="login_form.aspx">Login</a></li>
-                    <li><a href="exercise6.aspx">Exercise 6</a></li>
-                    <li><a href="exercise7.aspx">Exercise 7</a></li>
-                    <li><a href="exercise8.aspx">Exercise 8</a></li>
-                     <li><a href="private/exercise12.aspx">Exercise 12</a></li>
+                    <li><a href="../nextPage.aspx">Page 1</a></li>
+                    <li><a href="../CalculatorPage.aspx">Calc</a></li>
+                    <li><a href="../Lottery.aspx">Lottery</a></li>
+                    <li><a href="../exercise4.aspx">Validation</a></li>
+                    <li><a href="../exercise5.aspx">Sessions</a></li>
+                    <li><a href="../login_form.aspx">Login</a></li>
+                    <li><a href="../exercise6.aspx">Exercise 6</a></li>
+                    <li><a href="../exercise7.aspx">Exercise 7</a></li>
+                    <li><a href="../exercise8.aspx">Exercise 8</a></li>
+                     <li><a href="exercise12.aspx">Exercise 12</a></li>
 
                 </ul>
             </div>

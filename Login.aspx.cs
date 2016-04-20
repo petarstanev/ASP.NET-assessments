@@ -38,17 +38,23 @@ public partial class login_form : System.Web.UI.Page
         String username = TextBoxUsername.Text;
         String password = TextBoxPassword.Text;
 
-        if (containUser(new User(username, password)))
+        if (authenticateviaForms())
         {
-            Session["username"] = username;
-            Session["loggedIn"] = true;
-            Response.Redirect("login_success.aspx");
+            System.Web.Security.FormsAuthentication.RedirectFromLoginPage(TextBoxUsername.Text,false);
         }
         else
         {
             LabelFailed.Text = "Wrong username and password";
         }
     }
+
+    private bool authenticateviaForms()
+    {
+        if (TextBoxUsername.Text == "user" && TextBoxPassword.Text == "pass")
+            return true;
+        return false;
+    }
+  
 
     private Boolean containUser(User user)
     {
@@ -59,4 +65,6 @@ public partial class login_form : System.Web.UI.Page
         }
         return false;
     }
+
+   
 }
