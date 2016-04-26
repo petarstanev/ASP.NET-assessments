@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -14,8 +17,6 @@ public partial class login_form : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         users = new ArrayList();
-        users.Add(new User("user", "password01"));
-        users.Add(new User("petar", "password2"));
 
         LabelBotCheck.Text = GenerateCoupon(4);
     }
@@ -38,7 +39,7 @@ public partial class login_form : System.Web.UI.Page
         String username = TextBoxUsername.Text;
         String password = TextBoxPassword.Text;
 
-        if (authenticateviaForms())
+        if (authenticateviaDatabase())
         {
             System.Web.Security.FormsAuthentication.RedirectFromLoginPage(TextBoxUsername.Text,false);
         }
@@ -54,7 +55,46 @@ public partial class login_form : System.Web.UI.Page
             return true;
         return false;
     }
-  
+
+    private bool authenticateviaDatabase()
+    {
+        string sqlCommand = "SELECT * FROM users";
+        string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString; 
+
+        DataSet ds = GetDataSet(connectionString,sqlCommand );
+
+        foreach (DataTable table in ds.Tables)
+        {
+            foreach (DataRow row in table.Rows)
+            {
+                string usernameCheck = row[0].ToString();
+                string passwordCheck = row[1].ToString();
+
+                if (usernameCheck.Equals(TextBoxUsername.Text) && passwordCheck.Equals(TextBoxPassword.Text))
+                    return true;
+            }
+        }
+
+
+        return false;
+    }
+
+    public DataSet GetDataSet(string ConnectionString, string SQL)
+    {
+        SqlConnection conn = new SqlConnection(ConnectionString);
+        SqlDataAdapter da = new SqlDataAdapter();
+        SqlCommand cmd = conn.CreateCommand();
+        cmd.CommandText = SQL;
+        da.SelectCommand = cmd;
+        DataSet ds = new DataSet();
+
+        conn.Open();
+        da.Fill(ds);
+        conn.Close();
+
+        return ds;
+    }
+
 
     private Boolean containUser(User user)
     {
